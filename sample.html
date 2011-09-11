@@ -4,15 +4,12 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
     <script type="text/javascript" src="autoarrow.js"></script>
     <script type="text/javascript">
-      $(function() {
-          var container = new ArrowContainer('content', '#999999');
-          container.addArrow('anchor-1', 'icons', 70, 35, 40, 40);
-          container.addArrow('anchor-2', 'icons', 70, 35, 40, 40);
-          container.addArrow('anchor-3', 'icons', 70, 35, 40, 40);
-          container.addArrow('anchor-4', 'icons', 70, 35, 40, 40);
-          container.addArrow('anchor-5', 'icons', 70, 35, 40, 40);
-          container.addArrow('anchor-6', 'icons', 70, 35, 40, 40);
-          container.addArrow('anchor-7', 'icons', 70, 35, 40, 40);
+      $(window).load(function() {
+          var container = new ArrowContainer($('#content'), '#999999');
+          var img = $('#icons');
+          for (var i = 1; i <= 7; i++) {
+            container.addArrow($('#anchor-' + i), img, 70, 35, 40, 40);
+          };
           });
     </script>
   </head>

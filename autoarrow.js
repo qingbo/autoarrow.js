@@ -1,5 +1,5 @@
-function ArrowContainer(containerId, strokeStyle) {
-  this.init(containerId, strokeStyle);
+function ArrowContainer(container, strokeStyle) {
+  this.init(container, strokeStyle);
 }
 
 $.extend(ArrowContainer.prototype, {
@@ -7,14 +7,14 @@ $.extend(ArrowContainer.prototype, {
   strokeStyle: null,
   arrows: [],
 
-  init: function(containerId, strokeStyle) {
+  init: function(container, strokeStyle) {
+    this.container = container;
     this.strokeStyle = strokeStyle;
-    this.container = $('#' + containerId);
     this.container.css({
-      'position': 'relative',
-      'background-color': 'transparent'
-    });
-    this.canvas = $('<canvas id="' + containerId + '-canvas"></canvas>');
+        'position': 'relative',
+        'background-color': 'transparent'
+      });
+    this.canvas = $('<canvas id="' + this.container.attr('id') + '-canvas"></canvas>');
     this.setupCanvas();
     this.canvas.css({
       'position': 'absolute',
@@ -48,9 +48,7 @@ $.extend(ArrowContainer.prototype, {
     }
   },
 
-  addArrow: function(f, i, x1, y1, width, height) {
-    var from = $('#' + f);
-    var img = $('#' + i);
+  addArrow: function(from, img, x1, y1, width, height) {
     img.css({
       'z-index': '-100',
       'position': 'relative'
