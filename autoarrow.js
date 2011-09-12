@@ -14,6 +14,11 @@ $.extend(ArrowContainer.prototype, {
         'position': 'relative',
         'background-color': 'transparent'
       });
+    this.container.find('img').css({
+        'z-index': '-100',
+        'position': 'relative'
+      });
+
     this.canvas = $('<canvas id="' + this.container.attr('id') + '-canvas"></canvas>');
     this.setupCanvas();
     this.canvas.css({
@@ -49,10 +54,6 @@ $.extend(ArrowContainer.prototype, {
   },
 
   addArrow: function(from, img, x1, y1, width, height) {
-    img.css({
-      'z-index': '-100',
-      'position': 'relative'
-    });
     this.arrows.push([from, img, x1, y1, width, height]);
     this.drawArrow(from, img, x1, y1, width, height);
   },

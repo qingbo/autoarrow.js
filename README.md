@@ -1,22 +1,46 @@
-autoarrow.js is a simple piece of JavaScript code that can draw an arrow from any element
-to a rectangle in an image. When describing an image, it can be used conveniently to point to objects in the image from the words mentioning it.
+autoarrow.js is a simple piece of JavaScript code that can draw an arrow from
+any element to a rectangle in an image. When describing an image, it can be
+used conveniently to point to objects in the image from the words mentioning
+it.
 
 <img src="https://github.com/qingbo/autoarrow.js/raw/master/screenshot.png" style="width:300px;box-shadow:rgba(0,0,0,0.3) 0 0 5px" />
 
-This script has not been well tested but it runs well in current versions of Firefox/Chrome.
+This script has not been well tested but it runs well in current versions of
+Firefox/Chrome.
+
+### Requirements
+
+jQuery (I don't know the lowest version needed)
 
 ### Features
 
-- It chooses a relatively good-looking path based on the relative positions using a very simple algorithm. It's enough since in practice we'll never get it into a mess like shown in the screenshot above.
+- It chooses a relatively good-looking path based on the relative positions
+  using a very simple algorithm. It's enough since in practice we'll never get
+  it into a mess like shown in the screenshot above.
 - When window resizes it redraws the arrows based on new relative positions.
 
 ### How to Use
 
 Please see sample.html for its usage. Basically follow these steps:
 
-1. Select an element (often a div) where the elements you want to link resides. Call `new ArrowContainer()` with this element as parameter, and a color string for the arrows.
-2. After the container is created, call `container.addArrow()` to add arrows into the canvas. The arguments:
+1. Select an element (often a div) where the elements you want to link resides.
+   Call `new ArrowContainer()` with this element as parameter, and a color
+   string for the arrows.
+2. After the container is created, call `container.addArrow()` to add arrows
+   into the canvas. The arguments:
     1. from: element where the arrow starts
     2. img: the image the arrow points to
-    3. x1, y1: coordinate of the top left point of the arrow target object (origin being top left of the image)
+    3. x1, y1: coordinate of the top left point of the arrow target object
+       (origin being top left of the image)
     4. width, height: size of the object
+
+### Demo
+
+There is a sample.html included.
+
+I applied this script to my blog and here are some posts:
+
+- http://qingbo.net/blog/post560-book-stand.html
+- http://qingbo.net/blog/post575.html
+- http://qingbo.net/blog/post577.html
+
